@@ -10,6 +10,7 @@ describe('mergesort()', function () {
 
   it('conquers two lists into one', function () {
     expect(merge([1,3],[2,4])).to.eql([1,2,3,4]);
+    expect(merge([1],[1])).to.eql([1,1]);
   });
 
   it('partitions arrays', function () {
@@ -18,12 +19,19 @@ describe('mergesort()', function () {
   });
 
   it('sorts via mergesort', function () {
-    expect(mergesort([10,80,1,6,34,72,19,2])).to.eql([1,2,6,10,19,34,72,80]);
+    expect(mergesort([1,3,2,4])).to.eql([1,2,3,4]);
   });
 
-  it('does something else', function () {
-    expect(true).to.equal(false);
+  it('sorts with duplicate numbers', function () {
+    expect(mergesort([4,1,2,2,3])).to.eql([1,2,2,3,4]);
   });
 
-  // Add more assertions here
+  it('sorts a lot', function () {
+    var alot = 10000;
+    var lots = [];
+    for(var i = 0; i < alot; i++) {
+      lots.push(Math.floor(Math.random() * alot));
+    }
+    expect(mergesort(lots)).to.have.length(alot);
+  });
 });
