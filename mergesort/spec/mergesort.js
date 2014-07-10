@@ -26,12 +26,13 @@ describe('mergesort()', function () {
     expect(mergesort([4,1,2,2,3])).to.eql([1,2,2,3,4]);
   });
 
-  it('sorts a lot', function () {
+  xit('sorts a lot', function () {
     var alot = 10000;
     var lots = [];
     for(var i = 0; i < alot; i++) {
-      lots.push(Math.floor(Math.random() * alot));
+      lots.push(i);
     }
-    expect(mergesort(lots)).to.have.length(alot);
+    var shuffled = _.shuffle(lots);
+    expect(mergesort(shuffled)).to.eql(lots);
   });
 });
