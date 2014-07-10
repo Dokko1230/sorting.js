@@ -31,3 +31,21 @@ var merge = function(left, right) {
   }
   return results;
 };
+
+var partition = function(list) {
+  // Math floor for odd numbers
+  var middle = Math.floor(list.length / 2);
+  var left = [];
+  var right = [];
+  // for all the things below middle
+  for(var i = 0; i < middle; i++) {
+    // add to left
+    left.push(list[i]);
+  }
+  // for all the things after middle
+  for(var x = middle; x < list.length; x++) {
+    // add to right
+    right.push(list[x]);
+  }
+  return [left, right];
+};
