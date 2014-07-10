@@ -11,14 +11,23 @@ var mergesort = function(list) {
 
 var merge = function(left, right) {
   // make new array
-  
-  // while left and right is empty
-  // compare the first element of left and right
+  var results = [];
+
+  // while left and right is not empty
+  while(left.length !== 0 || right.length !== 0) {
     // if left is lesser than right
-    // add left to result
-    // remove first left
-    // else
-    // add right to result
-    // remove first right
-  // return result
+    if(left[0] < right[0]) {
+      // add left to result
+      results.push(left[0]);
+      // remove first left
+      left.splice(0,1);
+    } else {
+      // add right to result
+      results.push(right[0]);
+      // remove first right
+      right.splice(0,1);
+    }
+    
+  }
+  return results;
 };
