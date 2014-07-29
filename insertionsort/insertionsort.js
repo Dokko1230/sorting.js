@@ -9,7 +9,7 @@ var insertionsort = function(list) {
       if(remaining === 0) {
         if(list[remaining] > list[i]) {
           var removed = list.splice(i, 1)[0];
-          list.splice(remaining, 0, removed);
+          list.unshift(removed);
           break;
         }
       } else if(list[remaining] >= list[i] && list[remaining - 1] <= list[i]) {

@@ -26,7 +26,7 @@ describe('mergesort()', function () {
     expect(mergesort([4,1,2,2,3])).to.eql([1,2,2,3,4]);
   });
 
-  xit('sorts a lot', function () {
+  it('sorts a lot', function () {
     var alot = 10000;
     var lots = [];
     for(var i = 0; i < alot; i++) {
